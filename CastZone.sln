@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Importer.WordsScheduler", "CastZone.Importer.WordsScheduler\CastZone.Importer.WordsScheduler.csproj", "{5DEF5D6D-60DD-48B9-8966-B3E63510F805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Importer", "Importer", "{CD912944-4DD8-400B-9236-BCE0778352AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59D442A4-165F-4F7A-9DD1-ADD6153F9421}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{04683CE9-6795-4727-8077-C75CB98914E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Tools", "CastZone.Tools\CastZone.Tools.csproj", "{D912C113-C426-4EBE-8AC7-C01DAFAD7503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Tools.Tests", "CastZone.Tools.Tests\CastZone.Tools.Tests.csproj", "{8946E72A-36B5-416F-B068-A0DCB86EF255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Importer.WordsScheduler.Tests", "CastZone.Importer.WordsScheduler.Tests\CastZone.Importer.WordsScheduler.Tests.csproj", "{F34F75C7-F097-41C0-B92A-2DBFDA30255E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEF5D6D-60DD-48B9-8966-B3E63510F805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEF5D6D-60DD-48B9-8966-B3E63510F805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEF5D6D-60DD-48B9-8966-B3E63510F805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEF5D6D-60DD-48B9-8966-B3E63510F805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D912C113-C426-4EBE-8AC7-C01DAFAD7503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D912C113-C426-4EBE-8AC7-C01DAFAD7503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D912C113-C426-4EBE-8AC7-C01DAFAD7503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D912C113-C426-4EBE-8AC7-C01DAFAD7503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8946E72A-36B5-416F-B068-A0DCB86EF255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8946E72A-36B5-416F-B068-A0DCB86EF255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8946E72A-36B5-416F-B068-A0DCB86EF255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8946E72A-36B5-416F-B068-A0DCB86EF255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DEF5D6D-60DD-48B9-8966-B3E63510F805} = {CD912944-4DD8-400B-9236-BCE0778352AB}
+		{D912C113-C426-4EBE-8AC7-C01DAFAD7503} = {04683CE9-6795-4727-8077-C75CB98914E9}
+		{F34F75C7-F097-41C0-B92A-2DBFDA30255E} = {CD912944-4DD8-400B-9236-BCE0778352AB}
+	EndGlobalSection
+EndGlobal
