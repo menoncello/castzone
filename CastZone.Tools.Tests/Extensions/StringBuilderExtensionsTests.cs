@@ -10,31 +10,33 @@ namespace CastZone.Tools.Tests.Extensions
         {
             // Arrange
             var sb = new StringBuilder();
+            var checkSB = new StringBuilder();
+            checkSB.AppendLine("Test 123, 321");
 
             // Act
             sb.AppendFormattedLine("Test {0}, {1}", 123, 321);
 
             // Assert
-            Assert.Equal(@"Test 123, 321
-", sb.ToString());
+            Assert.Equal(checkSB.ToString(), sb.ToString());
         }
 
         [Fact]
         public void StringBuilderExtensions_AppendSequence_LineWasAddedCorrecly()
         {
             // Arrange
-            var stringBUilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
             var sequence = new[] { 1, 2, 3, 4 };
+            var checkSB = new StringBuilder();
+            checkSB.AppendLine("Test 1");
+            checkSB.AppendLine("Test 2");
+            checkSB.AppendLine("Test 3");
+            checkSB.AppendLine("Test 4");
 
             // Act
-            stringBUilder.AppendSequence(sequence, (sb, x) => sb.AppendFormattedLine("Test {0}", x));
+            stringBuilder.AppendSequence(sequence, (sb, x) => sb.AppendFormattedLine("Test {0}", x));
 
             // Assert
-            Assert.Equal(@"Test 1
-Test 2
-Test 3
-Test 4
-", stringBUilder.ToString());
+            Assert.Equal(checkSB.ToString(), stringBuilder.ToString());
         }
     }
 }

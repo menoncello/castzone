@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Importer.WordsScheduler", "CastZone.Importer.WordsScheduler\CastZone.Importer.WordsScheduler.csproj", "{5DEF5D6D-60DD-48B9-8966-B3E63510F805}"
 EndProject
@@ -49,6 +49,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5DEF5D6D-60DD-48B9-8966-B3E63510F805} = {CD912944-4DD8-400B-9236-BCE0778352AB}
 		{D912C113-C426-4EBE-8AC7-C01DAFAD7503} = {04683CE9-6795-4727-8077-C75CB98914E9}
+		{8946E72A-36B5-416F-B068-A0DCB86EF255} = {04683CE9-6795-4727-8077-C75CB98914E9}
 		{F34F75C7-F097-41C0-B92A-2DBFDA30255E} = {CD912944-4DD8-400B-9236-BCE0778352AB}
 	EndGlobalSection
 EndGlobal
