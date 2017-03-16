@@ -1,4 +1,4 @@
-﻿using CastZone.Importer.WordsScheduler.Models;
+﻿using CastZone.Importer.WordsScheduler.Persistences;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

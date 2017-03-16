@@ -5,6 +5,7 @@ using System.Diagnostics.Contracts;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 
 namespace System
 {
@@ -43,5 +44,20 @@ namespace System
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string ToJson<T>(this T @this) =>
             JsonConvert.SerializeObject(@this);
+
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T FromJson<T>(this string @this) =>
+            JsonConvert.DeserializeObject<T>(@this);
+
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static byte[] ToByteJson<T>(this T @this, Encoding encoding = null) =>        
+            (encoding ?? Encoding.UTF8).GetBytes(@this.ToJson());
+
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T FromByte<T>(this byte[] @this, Encoding encoding = null) =>
+            (encoding ?? Encoding.UTF8).GetString(@this).FromJson<T>();
     }
 }

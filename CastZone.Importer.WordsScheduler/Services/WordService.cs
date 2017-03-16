@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CastZone.Importer.WordsScheduler.Models;
 using CastZone.Importer.WordsScheduler.Persistences;
 
 namespace CastZone.Importer.WordsScheduler.Services

@@ -60,7 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordsScheduler\WordSchedulerTests.cs" />
+    <Compile Include="WordAdder\WordAdderServiceTests.cs" />
+    <Compile Include="WordAdder\WordServiceTests.cs" />
     <Compile Include="WordsScheduler\WordSchedulerServiceTests.cs" />
     <Compile Include="WordsScheduler\WordServiceTests.cs" />
   </ItemGroup>
@@ -68,10 +69,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CastZone.Importer.WordAdder\CastZone.Importer.WordAdder.csproj">
+      <Project>{c1a23455-6b51-4fd6-becf-a7bd58710913}</Project>
+      <Name>CastZone.Importer.WordAdder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CastZone.Importer.WordsScheduler\CastZone.Importer.WordsScheduler.csproj">
       <Project>{5def5d6d-60dd-48b9-8966-b3e63510f805}</Project>
       <Name>CastZone.Importer.WordsScheduler</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

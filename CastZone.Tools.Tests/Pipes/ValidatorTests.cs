@@ -145,5 +145,30 @@ namespace CastZone.Tools.Tests.Pipes
             // Assert
             Assert.True(result.IsSuccess);
         }
+
+        [Fact]
+        public void Validator_IsTrue_FailWhenPassingFalse()
+        {
+            // Arrange
+            var value = false;
+
+            // Act
+            var result = Validator.IsTrue(value);
+
+            // Assert
+            Assert.False(result.IsSuccess);
+        }
+        [Fact]
+        public void Validator_IsTrue_SuccesWhenPassingTrue()
+        {
+            // Arrange
+            var value = true;
+
+            // Act
+            var result = Validator.IsTrue(value);
+
+            // Assert
+            Assert.True(result.IsSuccess);
+        }
     }
 }

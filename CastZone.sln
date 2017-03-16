@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59D442A4-165F-4F7A-9DD1-ADD6153F9421}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		tests.bat = tests.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{04683CE9-6795-4727-8077-C75CB98914E9}"
@@ -19,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Tools.Tests", "CastZone.Tools.Tests\CastZone.Tools.Tests.csproj", "{8946E72A-36B5-416F-B068-A0DCB86EF255}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Importer.WordsScheduler.Tests", "CastZone.Importer.WordsScheduler.Tests\CastZone.Importer.WordsScheduler.Tests.csproj", "{F34F75C7-F097-41C0-B92A-2DBFDA30255E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastZone.Importer.WordAdder", "CastZone.Importer.WordAdder\CastZone.Importer.WordAdder.csproj", "{C1A23455-6B51-4FD6-BECF-A7BD58710913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +45,10 @@ Global
 		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F34F75C7-F097-41C0-B92A-2DBFDA30255E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A23455-6B51-4FD6-BECF-A7BD58710913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A23455-6B51-4FD6-BECF-A7BD58710913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A23455-6B51-4FD6-BECF-A7BD58710913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A23455-6B51-4FD6-BECF-A7BD58710913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +58,6 @@ Global
 		{D912C113-C426-4EBE-8AC7-C01DAFAD7503} = {04683CE9-6795-4727-8077-C75CB98914E9}
 		{8946E72A-36B5-416F-B068-A0DCB86EF255} = {04683CE9-6795-4727-8077-C75CB98914E9}
 		{F34F75C7-F097-41C0-B92A-2DBFDA30255E} = {CD912944-4DD8-400B-9236-BCE0778352AB}
+		{C1A23455-6B51-4FD6-BECF-A7BD58710913} = {CD912944-4DD8-400B-9236-BCE0778352AB}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -8,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace System
 {
-    public static class EnumerableExtensions
+    public static class EntityFrameworkExtensions
     {
         [Pure]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerable<T> LogAll<T>(this IEnumerable<T> @this)
+        public static async Task AddAndSaveChangesAsync<T>(this DbContext @this, T entity)
+            where T: class
         {
-            return @this.Tee(x => x.Log());
+            @this.Set<T>().Add(entity);
+            await @this.SaveChangesAsync();
         }
     }
 }

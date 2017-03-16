@@ -41,5 +41,10 @@ namespace CastZone.Tools.Pipes
                 value.Length < minLength
                     ? Result<string, string>.FailWith($"Value must be at least {minLength} characters long")
                     : Result<string, string>.SucceedWith(value);
+
+        public static Result<bool, string> IsTrue(bool value) =>
+            value
+                ? Result<bool, string>.SucceedWith(value)
+                : Result<bool, string>.FailWith("Value is not TRUE");
     }
 }

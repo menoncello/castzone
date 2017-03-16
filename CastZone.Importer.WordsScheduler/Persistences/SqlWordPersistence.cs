@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CastZone.Importer.WordsScheduler.Models;
+using CastZone.Tools.Pipes;
 
 namespace CastZone.Importer.WordsScheduler.Persistences
 {
     public class SqlWordPersistence : IWordPersistence
     {
-        public Task<IQueryable<Word>> GetWordsAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Word>> GetWordsAsync() =>
+            await Disposable.UsingAsAsync(
+                () => new WordContext(), 
+                db => db.Word.ToList());
     }
 }
