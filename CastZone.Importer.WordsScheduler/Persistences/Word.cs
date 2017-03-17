@@ -9,6 +9,11 @@ namespace CastZone.Importer.WordsScheduler.Persistences
     [Table("Word")]
     public partial class Word
     {
+        public Word()
+        {
+            
+        }
+
         public Word(string word)
         {
             Id = word;

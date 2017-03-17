@@ -17,13 +17,9 @@ namespace CastZone.Importer.WordAdder
                     var service = Config.Container()
                         .GetInstance<IWordAdderService>();
 
-                    ch.QueueDeclare(queue: "add-word",
-                                 durable: true,
-                                 exclusive: false,
-                                 autoDelete: false,
-                                 arguments: null);
+                    ch.QueueDeclare("add-word", true, false, false, null);
 
-                    ch.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+                    ch.BasicQos(0, 1, false);
 
                     var consumer = new EventingBasicConsumer(ch);
 
@@ -31,12 +27,10 @@ namespace CastZone.Importer.WordAdder
                     {
                         service
                             .Execute(ea.Body.FromByte<Word>());
-                        ch.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                        ch.BasicAck(ea.DeliveryTag, false);
                     };
 
-                    ch.BasicConsume(queue: "add-word",
-                                 noAck: false,
-                                 consumer: consumer);
+                    ch.BasicConsume("add-word", false, consumer);
 
                     Console.ReadLine();
                 });

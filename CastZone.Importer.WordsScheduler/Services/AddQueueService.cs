@@ -12,6 +12,6 @@ namespace CastZone.Importer.WordsScheduler.Services
     public class AddQueueService : IAddQueueService
     {
         public void Enqueue(IEnumerable<Word> words) =>
-            words.EnqueueMessage("add-word");
+            words.EnqueueMessage("add-word", durable: true);
     }
 }
