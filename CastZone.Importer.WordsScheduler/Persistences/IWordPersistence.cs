@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CastZone.Tools.Aspect;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CastZone.Importer.WordsScheduler.Persistences

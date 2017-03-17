@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using CastZone.Tools.Pipes;
 using CastZone.Importer.WordsScheduler.Persistences;
+using CastZone.Tools.Aspect;
+using System.Threading.Tasks;
 
 namespace CastZone.Importer.WordsScheduler.Services
 {
@@ -23,10 +25,10 @@ namespace CastZone.Importer.WordsScheduler.Services
             _defaultWords = new List<Word>((defaultWords ?? new List<Word>())).AsReadOnly();
         }
 
-        public void Execute()
+        [Logging]
+        public async Task ExecuteAsync()
         {
-            _wordService.GetWordsAsync()
-                .Then()
+            (await _wordService.GetWordsAsync())
                 .Map(Validator.IsNotEmpty)
                 .Failure(() => _addQueueService.Enqueue(_defaultWords))            
                 .Success(x => _queueService.Enqueue(x));

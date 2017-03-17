@@ -1,7 +1,10 @@
-﻿namespace CastZone.Importer.WordsScheduler.Services
+﻿using CastZone.Tools.Aspect;
+using System.Threading.Tasks;
+
+namespace CastZone.Importer.WordsScheduler.Services
 {
     public interface IWordSchedulerService
     {
-        void Execute();
+        Task ExecuteAsync();
     }
 }

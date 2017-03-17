@@ -1,10 +1,8 @@
 ﻿using CastZone.Importer.WordsScheduler.DI;
 using CastZone.Importer.WordsScheduler.Services;
+using CastZone.Tools.Logging;
+using CastZone.Tools.Pipes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CastZone.Importer.WordsScheduler
 {
@@ -12,9 +10,17 @@ namespace CastZone.Importer.WordsScheduler
     {
         static void Main(string[] args)
         {
-            Config.Container()
+            Bootstrap.Configure();
+            var logger = Factory.Container.GetInstance<ILogger>();
+
+            logger.Info("Starting WordsScheduler service");
+
+            Factory.Container
                 .GetInstance<IWordSchedulerService>()
-                .Execute();
+                .ExecuteAsync().Wait();
+
+            logger.Info("Finishing WordsScheduler service");
+            Console.ReadLine();
         }
     }
 }

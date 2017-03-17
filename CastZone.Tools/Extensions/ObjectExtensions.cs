@@ -42,8 +42,8 @@ namespace System
 
         [Pure]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string ToJson<T>(this T @this) =>
-            JsonConvert.SerializeObject(@this);
+        public static string ToJson<T>(this T @this, bool beaultify = false) =>
+            JsonConvert.SerializeObject(@this, beaultify ? Formatting.Indented : Formatting.None);
 
         [Pure]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,5 +59,16 @@ namespace System
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T FromByte<T>(this byte[] @this, Encoding encoding = null) =>
             (encoding ?? Encoding.UTF8).GetString(@this).FromJson<T>();
+
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Lock<T>(this T @this, Action method, bool firstTime = true)
+        {
+            lock (@this)
+            {
+                if (firstTime)
+                    method();
+            }
+        }
     }
 }

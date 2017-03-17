@@ -1,6 +1,8 @@
 ﻿using CastZone.Importer.WordAdder.DI;
 using CastZone.Importer.WordAdder.Persistences;
 using CastZone.Importer.WordAdder.Services;
+using CastZone.Tools.Logging;
+using CastZone.Tools.Pipes;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -11,12 +13,21 @@ namespace CastZone.Importer.WordAdder
     {
         static void Main(string[] args)
         {
+            Bootstrap.Configure();
+            var logger = Factory.Container.GetInstance<ILogger>();
+
+            logger.Info("Starting WordAdder service");
+            Console.WriteLine(Factory.Container.WhatDoIHave());
+            var service = Factory.Container
+                .GetInstance<IWordAdderService>();
+
             new ConnectionFactory()
                 .OpenChannel(ch =>
                 {
-                    var service = Config.Container()
-                        .GetInstance<IWordAdderService>();
+                    logger.Info("Channel opened");
 
+                    //Catcher.TryCatch(() =>
+                    //{
                     ch.QueueDeclare("add-word", true, false, false, null);
 
                     ch.BasicQos(0, 1, false);
@@ -31,7 +42,7 @@ namespace CastZone.Importer.WordAdder
                     };
 
                     ch.BasicConsume("add-word", false, consumer);
-
+                    //}, logger.Error);
                     Console.ReadLine();
                 });
         }

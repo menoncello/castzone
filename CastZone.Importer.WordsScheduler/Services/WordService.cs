@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CastZone.Importer.WordsScheduler.Persistences;
+using CastZone.Tools.Aspect;
 
 namespace CastZone.Importer.WordsScheduler.Services
 {
@@ -16,6 +17,7 @@ namespace CastZone.Importer.WordsScheduler.Services
             _wordPersistence = wordPersistence;
         }
 
+        [Logging]
         public async Task<IEnumerable<Word>> GetWordsAsync()
         {
             return await _wordPersistence.GetWordsAsync();

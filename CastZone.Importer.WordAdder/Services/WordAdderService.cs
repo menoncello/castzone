@@ -1,6 +1,7 @@
 ﻿using CastZone.Importer.WordAdder.Persistences;
 using System;
 using CastZone.Tools.Pipes;
+using StructureMap;
 
 namespace CastZone.Importer.WordAdder.Services
 {
@@ -9,6 +10,7 @@ namespace CastZone.Importer.WordAdder.Services
         private readonly IWordService _wordService;
         private readonly IQueueService _queueService;
         
+        [DefaultConstructor]
         public WordAdderService(IWordService wordService, IQueueService queueService)
         {
             _wordService = wordService;

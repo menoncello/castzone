@@ -1,27 +1,25 @@
 ﻿using CastZone.Importer.WordsScheduler.Persistences;
 using CastZone.Importer.WordsScheduler.Services;
+using CastZone.Tools.Aspect;
+using CastZone.Tools.Logging;
+using CastZone.Tools.Pipes;
 using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CastZone.Importer.WordsScheduler.DI
 {
-    public static class Config
+    public static class Bootstrap
     {
-        private static Container _container;
-        public static Container Container()
-        {
-            return (_container ?? (_container = new Container(_ =>
+        public static void Configure() =>
+            Factory.Container.Configure(_ =>
             {
-                _.For<IWordSchedulerService>().Use<WordSchedulerService>();
-                _.For<IWordService>().Use<WordService>();
-                _.For<IWordPersistence>().Use<SqlWordPersistence>();
-                _.For<IQueueService>().Use<QueueService>();
-                _.For<IAddQueueService>().Use<AddQueueService>();
-            })));
-        }
+                _.DefaultSetup();
+
+                _.For<IWordSchedulerService>().Use<WordSchedulerService>().Proxy();
+
+                _.For<IWordService>().Use<WordService>().Proxy();
+                _.For<IWordPersistence>().Use<SqlWordPersistence>().Proxy();
+                _.For<IQueueService>().Use<QueueService>().Proxy();
+                _.For<IAddQueueService>().Use<AddQueueService>().Proxy();
+            });
     }
 }

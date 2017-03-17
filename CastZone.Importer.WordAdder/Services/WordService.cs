@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CastZone.Importer.WordAdder.Persistences;
+using StructureMap;
 
 namespace CastZone.Importer.WordAdder.Services
 {
@@ -7,6 +8,7 @@ namespace CastZone.Importer.WordAdder.Services
     {
         private readonly IWordPersistence _wordPersistence;
 
+        [DefaultConstructor]
         public WordService(IWordPersistence wordPersistence)
         {
             _wordPersistence = wordPersistence;
