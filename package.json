@@ -1,0 +1,33 @@
+{
+  "name": "castzone",
+  "version": "1.0.0",
+  "description": "A Podcast portal and hub for discover podcasts",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menoncello/castzone.git"
+  },
+  "author": "Eduardo Menoncello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/menoncello/castzone/issues"
+  },
+  "homepage": "https://github.com/menoncello/castzone#readme",
+  "devDependencies": {
+    "bluebird-tools": "^1.3.2",
+    "chai": "^3.5.0",
+    "coveralls": "^2.12.0",
+    "eslint": "^3.15.0",
+    "eslint-plugin-node": "^4.0.0",
+    "flightplan": "^0.6.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "mockery": "^2.0.0",
+    "mongo-mock": "^2.4.0",
+    "sinon": "^1.17.7"
+  }
+}

@@ -1,0 +1,52 @@
+version: '2'
+
+services:
+
+  # MongoDB
+  mongo:
+    image: mongo
+    container_name: 'mongo'
+    restart: always
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo
+
+  # NSQ
+  nsqlookupd:
+    image: nsqio/nsq
+    container_name: 'nsq-lookup'
+    restart: always
+    command: /nsqlookupd
+    ports:
+      - "4161:4161"
+      - "4160:4160"
+    networks:
+      - nsq
+  nsqd:
+    image: nsqio/nsq
+    container_name: 'nsq-data'
+    restart: always
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160
+    ports:
+      - "4150:4150"
+      - "4151:4151"
+    networks:
+      - nsq
+  nsqadmin:
+    image: nsqio/nsq
+    container_name: 'nsq-admin'
+    restart: always
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+    ports:
+      - "4171:4171"
+    networks:
+      - nsq
+
+networks:
+  nsq:
+    external:
+      name: nsq
+  mongo:
+    external:
+      name: mongo

@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+
+  ## Importer
+
+  ### words-scheduler
+  importer_words-scheduler:
+    build: importer/words-scheduler
+    networks:
+      - importer
+      - nsq
+      - mongo
+    environment:
+      - NSQ_DATA_URL=nsqd
+      - NSQ_LOOKUP_URL=nsqlookupd
+      - MONGO_URL=mongodb://mongo:27017/cz-importer
+
+  ### searcher
+  importer_searcher:
+    build: importer/searcher
+    networks:
+      - importer
+      - nsq
+      - mongo
+    environment:
+      - NSQ_DATA_URL=nsqd
+      - NSQ_LOOKUP_URL=nsqlookupd
+      - MONGO_URL=mongodb://mongo:27017/cz-importer
+
+  ### word-adder
+  importer_word-adder:
+    build: importer/word-adder
+    networks:
+      - importer
+      - nsq
+      - mongo
+    environment:
+      - NSQ_DATA_URL=nsqd
+      - NSQ_LOOKUP_URL=nsqlookupd
+      - MONGO_URL=mongodb://mongo:27017/cz-importer
+
+networks:
+  importer:
+  nsq:
+    external:
+      name: nsq
+  mongo:
+    external:
+      name: mongo
