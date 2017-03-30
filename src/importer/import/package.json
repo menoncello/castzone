@@ -1,0 +1,18 @@
+{
+  "name": "import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird-tools": "^1.6.0",
+    "mongodb": "^2.2.25",
+    "nsq-listener": "0.0.6",
+    "nsq-publisher": "*",
+    "winston": "^2.3.1"
+  }
+}
