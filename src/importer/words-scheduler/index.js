@@ -7,9 +7,7 @@ const helpers = require('./helpers');
 config.logger.info('Starting words scheduler');
 const start = now();
 
-Promise.monitor('create word topic', helpers.createWordTopic)
-	.thenMonitor('create add-word topic', helpers.createAddWordTopic)
-	.thenMonitor('load words', helpers.getAllWords)
+Promise.monitor('load words', helpers.getAllWords)
 	.whenLog('debug', helpers.wordLength, 'scheduling the words')
 	.unlessLog('debug', helpers.wordLength, 'importing the default words')
 	.iif(helpers.wordLength, helpers.publishWords, helpers.publishDefaultWords)
