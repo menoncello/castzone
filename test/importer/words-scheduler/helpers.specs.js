@@ -3,7 +3,7 @@ const assert = require('chai').assert;
 const mockery = require('mockery');
 const sinon = require('sinon');
 
-suite('word-scheduler - helpers', () => {
+suite('importer/word-scheduler/helpers', () => {
 	let configMock;
 	let mongodbMock;
 	let helpers;
