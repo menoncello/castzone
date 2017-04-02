@@ -43,7 +43,6 @@ suite('importer/word-scheduler/index', () => {
 		sandbox.stub(helpersMock, 'error').returns(Promise.resolve());
 
 		sandbox.stub(configMock.logger, 'info').returns(Promise.resolve());
-		sandbox.stub(configMock.logger, 'debug').returns(Promise.resolve());
 		sandbox.stub(configMock.logger, 'log').returns(Promise.resolve());
 
 		index = require('../../../src/importer/words-scheduler/index');
