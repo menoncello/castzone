@@ -49,12 +49,14 @@ module.exports.tools = {
 		dataHttpPort: module.exports.nsq.dataHttpPort(),
 		dataTcpPort: module.exports.nsq.dataTcpPort(),
 		topic: module.exports.nsq.wordTopic(),
+		autoCreate: true,
 	}),
 	addPub: new Publisher({
 		dataUrl: module.exports.nsq.dataUrl(),
 		dataHttpPort: module.exports.nsq.dataHttpPort(),
 		dataTcpPort: module.exports.nsq.dataTcpPort(),
 		topic: module.exports.nsq.wordAddTopic(),
+		autoCreate: true,
 	}),
 };
 
