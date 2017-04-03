@@ -10,11 +10,10 @@ function listener() {
 		const word = msg.json();
 		config.logger.info('Word to search:', word);
 
-		Promise.monitor('search iTunes', helpers.searchPodcast(word._id))
+		Promise.monitor('search iTunes', () => helpers.searchPodcast(word._id))
 			.whenLog('info', data => data.length, 'no podcast to import')
 			.unless(data => data.length, data => {
-				Promise.resolve()
-					.thenMonitor('get existing podcasts', () => helpers.existingPodcasts(data))
+				Promise.monitor('get existing podcasts', () => helpers.existingPodcasts(data))
 					.thenMonitor('send to import', () => config.tools.importPub.publish(data));
 			})
 			.info('finishing')

@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bluebird-tools": "^1.6.0",
+    "bluebird-tools": "^1.7.0",
     "mongodb": "^2.2.25",
-    "nsq-listener": "*",
-    "nsq-publisher": "*",
+    "nsq-listener": "^1.0.0",
+    "nsq-publisher": "^1.0.2",
     "performance-now": "^2.1.0",
     "request": "^2.81.0",
     "winston": "^2.3.1"

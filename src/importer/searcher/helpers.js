@@ -4,14 +4,6 @@ const iTunes = require('itunes-api-search');
 
 const config = require('./config');
 
-module.exports.createWordTopic = () => config.tools.wordPub.createTopic();
-
-module.exports.createAddWordTopic = () => config.tools.addWordPub.createTopic();
-
-module.exports.createImportTopic = () => config.tools.importPub.createTopic();
-
-module.exports.createImportPodcastChannel = () => config.tools.listener.createChannel();
-
 module.exports.searchPodcast = (word) => iTunes.search(word, { entity: 'podcast', limit: 200 });
 
 module.exports.publishWords = w => config.tools.wordPub.publish(w);
